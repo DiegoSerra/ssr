@@ -19,6 +19,10 @@ const appRoutes: Routes = [
   {
     path: '**',
     redirectTo: './landing-page/landing-page.module#LandingPageModule'
+  },
+  {
+    path: '**',
+    redirectTo: 'app/player'
   }
 ];
 
