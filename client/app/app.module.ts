@@ -6,6 +6,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { VideoService } from './core/services/video.service';
 
 const appRoutes: Routes = [
   {
@@ -36,7 +37,9 @@ const appRoutes: Routes = [
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    VideoService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
