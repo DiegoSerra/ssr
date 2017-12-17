@@ -1,0 +1,23 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+mat-toolbar {
+  background: white;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+mat-drawer-container{
+  height: 100vh;
+}
+
+.mat-subheader{
+  font-size: 1.4rem;
+  font-weight: 400;
+  color:#616161;
+}
+
+.mat-list-item a{
+  font-size: 1.4rem;
+  font-weight: 400;
+}

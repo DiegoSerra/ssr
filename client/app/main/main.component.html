@@ -1,4 +1,27 @@
 <!-- TODO: Insert Toolbar -->
+<mat-toolbar>
+  <button mat-icon-button (click)="onClick">
+      <mat-icon class="mat-18">menu</mat-icon>
+  </button>
+  
+  <img src="assets/logotipe.png" alt="SsrTube" width="80" height="24" style="margin-left: 20px"/>
+
+  <!-- INPUT TEXTBOX -->
+
+  <span class="example-spacer"></span>
+  <button mat-icon-button (click)="onClick">
+    <mat-icon class="mat-18">file_upload</mat-icon>
+  </button>
+  <button mat-icon-button (click)="onClick">
+    <mat-icon class="mat-18">apps</mat-icon>
+  </button>
+  <button mat-icon-button (click)="onClick">
+    <mat-icon class="mat-18">notifications</mat-icon>
+  </button>
+  <button mat-icon-button (click)="onClick">
+    <img src="assets/user.jpg" alt="Usuario" width="32" height="32" style="border-radius: 50%" />
+  </button>
+</mat-toolbar>
 
 <router-outlet></router-outlet>
 
