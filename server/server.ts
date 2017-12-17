@@ -10,8 +10,8 @@ import * as express from 'express';
 import * as os from 'os';
 import * as http from 'http';
 
-import {RoutesConfig} from './config/routes.conf';
-import {DBConfig} from './config/db.conf';
+import {RoutesConfig} from './config/routes.config';
+import {DBConfig} from './config/db.config';
 import {Routes} from './routes/index';
 
 const app = express();
