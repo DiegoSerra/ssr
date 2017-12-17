@@ -13,8 +13,8 @@ videoSchema.static('getAll', (query?) => {
     Video
       .find(_query)
       .lean()
-      .exec((err, users) => {
-        err ? reject(err) : resolve(users);
+      .exec((err, videos) => {
+        err ? reject(err) : resolve(videos);
       });
   });
 });
@@ -26,9 +26,23 @@ videoSchema.static('getOneByQuery', (query) => {
     Video
       .findOne(_query)
       .lean()
-      .exec((err, user) => {
-        err ? reject(err) : resolve(user);
+      .exec((err, video) => {
+        err ? reject(err) : resolve(video);
       });
+  });
+});
+
+videoSchema.static('createNew', (video) => {
+  return new Promise((resolve, reject) => {
+    if (!_.isObject(video)) {
+      return reject(new TypeError('Is not a valid object.'));
+    }
+
+    const _something = new Video(video);
+
+    _something.save((err, saved) => {
+      err ? reject(err) : resolve(saved);
+    });
   });
 });
 

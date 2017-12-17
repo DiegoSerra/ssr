@@ -10,7 +10,7 @@ export class VideoRoutes {
       .post(VideoController.createNew);
 
     router
-      .route('/api/video:id')
+      .route('/api/video/:id')
       .get(VideoController.getOne);
   }
 

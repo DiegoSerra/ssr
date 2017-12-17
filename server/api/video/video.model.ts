@@ -3,6 +3,7 @@
 import * as mongoose from 'mongoose';
 
 const VideoSchema = new mongoose.Schema({
+  name: String,
   title: String,
   description: String,
   time: String,
