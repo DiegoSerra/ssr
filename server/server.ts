@@ -5,7 +5,6 @@ if (process.env.NEW_RELIC_ENABLED === 'true') require('newrelic');
 const PORT = process.env.PORT || 3333;
 process.env.NODE_ENV = process.env.NODE_ENV || 'local';
 
-
 import * as express from 'express';
 import * as os from 'os';
 import * as http from 'http';

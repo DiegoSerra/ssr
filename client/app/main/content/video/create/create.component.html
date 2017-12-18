@@ -1,3 +1,10 @@
-<p>
-  create works!
-</p>
+<div *ngIf="!imported">
+  <button mat-raised-button color="accent" (click)="fileInput.click()">
+    Importar
+    <input #fileInput type="file" ng2FileSelect [uploader]="uploaderImportFile" (change)="importFile()"
+            style="display:none">
+  </button>
+</div>
+<div *ngIf="imported">
+  imported
+</div>

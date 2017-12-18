@@ -10,7 +10,7 @@ const VideoSchema = new mongoose.Schema({
   path: String,
   image: {
     type: String,
-    default: 'assets/logotipe.png'
+    default: 'assets/user.png'
   },
   author: {
     _id: String,

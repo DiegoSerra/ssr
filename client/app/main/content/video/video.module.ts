@@ -5,6 +5,7 @@ import { ViewComponent } from './view/view.component';
 import { RouterModule, Route } from '@angular/router';
 import { VideoResolve } from './video.resolve';
 import { CreateComponent } from './create/create.component';
+import { FileUploadModule } from 'ng2-file-upload';
 
 const routes: Route[] = [
   {
@@ -36,7 +37,8 @@ const routes: Route[] = [
 @NgModule({
   imports: [
     SharedModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    FileUploadModule
   ],
   declarations: [AllComponent, ViewComponent, CreateComponent],
   providers: [
