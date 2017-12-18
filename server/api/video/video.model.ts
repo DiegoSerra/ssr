@@ -7,8 +7,18 @@ const VideoSchema = new mongoose.Schema({
   title: String,
   description: String,
   time: String,
-  authorId: String,
-  uploadDate: Date,
+  author: {
+    _id: String,
+    name: String,
+  },
+  uploadDate: {
+    type: Date,
+    default: Date.now
+  },
+  visualizations: {
+    type: Number,
+    default: 0
+  }
 });
 
 export default (VideoSchema);

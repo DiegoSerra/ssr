@@ -10,9 +10,6 @@ $header-height-sm: 100px !default;
 $carded-header-height-without-toolbar: $carded-header-height - $carded-toolbar-height;
 $carded-header-height-without-toolbar-sm: $carded-header-height-sm - $carded-toolbar-height;
 
-// Top bg image
-$top-bg-image: url('https://s3.eu-west-2.amazonaws.com/opportumeety.clapps.io/assets/backgrounds/header-bg.png');
-
 .page-layout {
     position: relative;
     overflow-x: hidden;
@@ -34,7 +31,6 @@ $top-bg-image: url('https://s3.eu-west-2.amazonaws.com/opportumeety.clapps.io/as
             right: 0;
             left: 0;
             height: $carded-header-height;
-            background-image: $top-bg-image;
             background-size: cover;
 
             @include media-breakpoint-down('sm') {
@@ -275,7 +271,6 @@ $top-bg-image: url('https://s3.eu-west-2.amazonaws.com/opportumeety.clapps.io/as
 
         // Top bg
         > .header {
-            background-image: $top-bg-image;
             background-size: cover;
         }
 
@@ -389,7 +384,6 @@ $top-bg-image: url('https://s3.eu-west-2.amazonaws.com/opportumeety.clapps.io/as
                         height: $header-height;
                         min-height: $header-height;
                         max-height: $header-height;
-                        background-image: $top-bg-image;
                     }
 
                     .center {

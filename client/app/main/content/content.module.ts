@@ -1,17 +1,16 @@
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../../core/modules/shared.module';
 import { RouterModule, Route } from '@angular/router';
-import { PlayerComponent } from './player/player.component';
 
 const routes: Route[] = [
   {
-    path: 'player',
-    component: PlayerComponent
+    path: 'video',
+    loadChildren: './video/video.module#VideoModule'
   },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: '/app/player'
+    redirectTo: '/app/video/all'
   },
 ]
 
@@ -20,8 +19,6 @@ const routes: Route[] = [
     SharedModule,
     RouterModule.forChild(routes),
   ],
-  declarations: [
-    PlayerComponent
-  ]
+  declarations: []
 })
 export class ContentModule { }

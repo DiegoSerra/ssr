@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HttpModule } from '@angular/http';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { VideoService } from './core/services/video.service';
+import { HeaderComponent } from './shared/header/header.component';
+import { SidebarComponent } from './shared/sidebar/sidebar.component';
 
 const appRoutes: Routes = [
   {
@@ -23,7 +25,7 @@ const appRoutes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'app/player'
+    redirectTo: 'app/video/all'
   }
 ];
 
@@ -31,6 +33,8 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    HeaderComponent,
+    SidebarComponent,
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
