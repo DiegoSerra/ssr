@@ -50,8 +50,10 @@
   <mat-drawer-content style="background:#F5F5F5">
     <!-- TODO: insert all videos -->
     <div *ngFor="let video of videos">
-      {{video.title}}
-      <img [src]="video.image" [alt]="video.title">
+      <div style="cursor: pointer" [routerLink]="['..', 'view', video._id]">
+        {{video.title}}
+        <img [src]="video.image" [alt]="video.title">
+      </div>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

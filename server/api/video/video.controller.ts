@@ -23,7 +23,6 @@ export class VideoController {
     VideoDao
       ['getOneByQuery'](req.params.id)
       .then(video => {
-        console.log(video)
         const path = video.path;
         const stat = fs.statSync(path)
         const fileSize = stat.size
