@@ -14,7 +14,7 @@ const routes: Route[] = [
         path: 'view/:id',
         component: ViewComponent,
         resolve: {
-          event: VideoResolve
+          video: VideoResolve
         }
       }, {
         path: 'create',

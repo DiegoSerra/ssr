@@ -1,5 +1,7 @@
 <div id="player">
-  <!-- TODO: Video -->
+  <video *ngIf="video" id="videoPlayer" controls autoplay>
+    <source [src]="video.path.replace('client/', '')" type="video/mp4">
+  </video>
 </div>
 
 <div id="contenido">

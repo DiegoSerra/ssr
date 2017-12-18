@@ -7,6 +7,7 @@ const VideoSchema = new mongoose.Schema({
   title: String,
   description: String,
   time: String,
+  path: String,
   author: {
     _id: String,
     name: String,
