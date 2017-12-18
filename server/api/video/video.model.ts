@@ -8,6 +8,10 @@ const VideoSchema = new mongoose.Schema({
   description: String,
   time: String,
   path: String,
+  image: {
+    type: String,
+    default: 'assets/logotipe.png'
+  },
   author: {
     _id: String,
     name: String,

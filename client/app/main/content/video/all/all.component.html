@@ -51,6 +51,7 @@
     <!-- TODO: insert all videos -->
     <div *ngFor="let video of videos">
       {{video.title}}
+      <img [src]="video.image" [alt]="video.title">
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

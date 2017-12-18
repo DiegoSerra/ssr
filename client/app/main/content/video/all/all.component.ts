@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { VideoService } from '../../../../core/services/video.service';
 
 @Component({
   selector: 'app-all',
@@ -14,9 +15,13 @@ export class AllComponent implements OnInit {
     {title: 'asd3'},
   ]
 
-  constructor() { }
+  constructor(private videoService: VideoService) { }
 
   ngOnInit() {
+    this.videoService.all()
+      .subscribe(videos => {
+        this.videos = videos;
+      })
   }
 
 }
