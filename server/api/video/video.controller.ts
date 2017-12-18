@@ -21,8 +21,9 @@ export class VideoController {
 
   static getOne(req: express.Request, res: express.Response) {
     VideoDao
-      ['getOneByQuery']({_id: req.params.id})
+      ['getOneByQuery'](req.params.id)
       .then(video => {
+        console.log(video)
         const path = video.path;
         const stat = fs.statSync(path)
         const fileSize = stat.size
@@ -40,7 +41,7 @@ export class VideoController {
             'Accept-Ranges': 'bytes',
             'Content-Length': chunksize,
             'Content-Type': 'video/mp4',
-            ...video
+            ...video._doc
           }
           res.status(206).json(head);
           file.pipe(res);
@@ -48,12 +49,12 @@ export class VideoController {
           const head = {
             'Content-Length': fileSize,
             'Content-Type': 'video/mp4',
-            ...video
+            ...video._doc
           }
           res.status(200).json(head);
           fs.createReadStream(path).pipe(res)
         }         
       })
-      .catch(error => console.log(error));
+      .catch(error => res.status(400).json(error));
   }
 }

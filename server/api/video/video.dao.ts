@@ -19,18 +19,18 @@ videoSchema.static('getAll', (query?) => {
   });
 });
 
-videoSchema.static('getOneByQuery', (query) => {
-  return new Promise((resolve, reject) => {
-    const _query = query;
+// videoSchema.static('getOneByQuery', (query) => {
+//   return new Promise((resolve, reject) => {
+//     const _query = query;
 
-    Video
-      .findOne(_query)
-      .lean()
-      .exec((err, video) => {
-        err ? reject(err) : resolve(video);
-      });
-  });
-});
+//     Video
+//       .findOne(_query)
+//       .lean()
+//       .exec((err, video) => {
+//         err ? reject(err) : resolve(video);
+//       });
+//   });
+// });
 
 videoSchema.static('createNew', (video) => {
   return new Promise((resolve, reject) => {
@@ -43,6 +43,38 @@ videoSchema.static('createNew', (video) => {
     _something.save((err, saved) => {
       err ? reject(err) : resolve(saved);
     });
+  });
+});
+
+videoSchema.static('updateVisualizations', (videoId) => {
+  return new Promise((resolve, reject) => {
+
+    if (!_.isString(videoId)) {
+      return reject(new TypeError('videoId is not a valid String.'));
+    }
+
+    Video
+      .update(
+        {_id: videoId},
+        {$inc: {visualizations: 1}},
+        {upsert: true}
+      ).exec((err, updated) => {
+      err ? reject(err) : resolve(updated);
+    });
+  });
+});
+
+videoSchema.static('getOneByQuery', (videoId) => {
+  return new Promise((resolve, reject) => {
+    Video
+      .findOneAndUpdate(
+        {_id: videoId},
+        {$inc: {visualizations: 1}},
+        {upsert: true}
+      ).exec((err, updated) => {
+      err ? reject(err) : resolve(updated);
+    });
+
   });
 });
 
