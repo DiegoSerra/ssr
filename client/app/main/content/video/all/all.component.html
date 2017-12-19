@@ -49,23 +49,23 @@
   </mat-drawer>
   <mat-drawer-content style="background:#F5F5F5">
     <!-- TODO: insert all videos -->
-    <mat-grid-list cols="4" rowHeight="400px">
+    <mat-grid-list cols="4" style="max-width: 1070px; margin: 0 auto;">
       <div *ngFor="let video of videos">
         <mat-grid-tile>  
           <figure class="mat-figure" style="display:blockflex;">
             <div style="cursor: pointer" [routerLink]="['..', 'view', video._id]">
               <img [src]="video.image" [alt]="video.title" style="height:117.5px; width:210px">
-              <div style="font-weight:bold;text-transform:uppercase;">
+              <div style="font-weight:500; font-size: 1.4rem; max-height: 3.2rem; overflow: hidden; margin: 8px auto;">
                   {{video.title}}
               </div>
-              <div style="color:grey;">
+              <div style="color:grey; text-overflow: ellipsis">
                   {{video.author}}
               </div>
-              <div style="color:grey;">
-                  {{video.visualizations}} 
+              <div style="color:grey; text-overflow: ellipsis">
+                  {{video.visualizations}} visualizaciones
               </div>
-              <div style="color:grey;">
-                  {{video.uploadDate}} 
+              <div style="color:grey; text-overflow: ellipsis">
+                  {{video.uploadDate | date: 'dd/MM/yyyy'}} 
               </div>
             </div>
           </figure>

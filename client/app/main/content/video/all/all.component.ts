@@ -8,12 +8,7 @@ import { VideoService } from '../../../../core/services/video.service';
 })
 export class AllComponent implements OnInit {
 
-  videos = [
-    {title: 'titulo',author:'autor',visualizations:'100 visualizaciones',uploadDate:'Hace 4 años',image:'assets/user.jpg'},
-    {title: 'titulo1',author:'autor1',visualizations:'101 visualizaciones',uploadDate:'Hace 5 años',image:'assets/user.jpg'},
-    {title: 'titulo2',author:'autor2',visualizations:'102 visualizaciones',uploadDate:'Hace 6 años',image:'assets/user.jpg'},
-    {title: 'titulo3',author:'autor3',visualizations:'103 visualizaciones', uploadDate:'Hace 7 años',image:'assets/user.jpg'},
-  ]
+  videos: any[] = [];
 
   constructor(private videoService: VideoService) { }
 
