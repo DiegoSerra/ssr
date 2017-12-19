@@ -6,6 +6,7 @@ import { RouterModule, Route } from '@angular/router';
 import { VideoResolve } from './video.resolve';
 import { CreateComponent } from './create/create.component';
 import { FileUploadModule } from 'ng2-file-upload';
+import {TimeAgoPipe} from 'time-ago-pipe';
 
 const routes: Route[] = [
   {
@@ -40,7 +41,7 @@ const routes: Route[] = [
     RouterModule.forChild(routes),
     FileUploadModule
   ],
-  declarations: [AllComponent, ViewComponent, CreateComponent],
+  declarations: [AllComponent, ViewComponent, CreateComponent, TimeAgoPipe],
   providers: [
     VideoResolve
   ]

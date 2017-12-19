@@ -36,6 +36,7 @@
     "morgan": "^1.5.2",
     "ng2-file-upload": "^1.2.1",
     "rxjs": "^5.5.2",
+    "time-ago-pipe": "^1.2.1",
     "zone.js": "^0.8.14"
   },
   "devDependencies": {
