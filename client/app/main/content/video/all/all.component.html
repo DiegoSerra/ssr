@@ -49,11 +49,28 @@
   </mat-drawer>
   <mat-drawer-content style="background:#F5F5F5">
     <!-- TODO: insert all videos -->
-    <div *ngFor="let video of videos">
-      <div style="cursor: pointer" [routerLink]="['..', 'view', video._id]">
-        {{video.title}}
-        <img [src]="video.image" [alt]="video.title">
-      </div>
-    </div>
+    <mat-grid-list cols="4" rowHeight="400px">
+      <div *ngFor="let video of videos">
+        <mat-grid-tile>  
+          <figure class="mat-figure" style="display:blockflex;">
+            <div style="cursor: pointer" [routerLink]="['..', 'view', video._id]">
+              <img [src]="video.image" [alt]="video.title" style="height:117.5px; width:210px">
+              <div style="font-weight:bold;text-transform:uppercase;">
+                  {{video.title}}
+              </div>
+              <div style="color:grey;">
+                  {{video.author}}
+              </div>
+              <div style="color:grey;">
+                  {{video.visualizations}} 
+              </div>
+              <div style="color:grey;">
+                  {{video.uploadDate}} 
+              </div>
+            </div>
+          </figure>
+        </mat-grid-tile>
+      </div>        
+    </mat-grid-list>
   </mat-drawer-content>
 </mat-drawer-container>
